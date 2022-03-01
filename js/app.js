@@ -87,6 +87,132 @@ const displayPhonedData = (phoneInfos) => {
     // console.log(phoneInfos);
 }
 
+// displaying Single Product details
+const loadPhoneDetails = phoneID => {
+    const url = `https://openapi.programming-hero.com/api/phone/${phoneID}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(PhoneIdData => displayPhoneDetails(PhoneIdData.data));
+}
+const displayPhoneDetails = singleData => {
+    console.log(singleData)
+    variableDeclared('details-card').textContent = "";;
+    
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <div class="card">
+        <img src="${singleData.image}" class="card-img-top w-20 mx-auto img-fluid" alt="...">
+        <div class="card-body">
+
+            <h2> Phone name : ${singleData.name} </h2>
+            <p><span>Phone brand :</span> ${singleData.brand} </p>
+            <p><span>Release Date :</span> ${singleData.releaseDate ? singleData.releaseDate : 'Null' } </p>
+                <div class="SpecificationSection">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                            <th scope="col">Main Feature Name</th>
+                            <th scope="col">Main Feature Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <th scope="row">Chipset</th>
+                          <td>${singleData.mainFeatures.chipSet}</td>
+                      
+                        </tr>
+                        <tr>
+                          <td>Display</td>
+                          <td>${singleData.mainFeatures.displaySize}</td>
+                        </tr>
+                        <tr>
+                          <td>Memory</td>
+                          <td>${singleData.mainFeatures.memory}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                            <th scope="col">Others Feature Name</th>
+                            <th scope="col-6">Others Feature Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <th scope="row">Bluetooth</th>
+                          <td>${singleData.others.Bluetooth ? singleData.others.Bluetooth: "Not Found"}</td>
+                      
+                        </tr>
+                        <tr>
+                          <td>GPS</td>
+                          <td>${singleData.others.GPS ? singleData.others.GPS: "Not Found"}</td>
+                        </tr>
+                        <tr>
+                          <td>NFC</td>
+                          <td>${singleData.others.NFC ? singleData.others.NFC: "Not Found"}</td>
+                        </tr>
+                        <tr>
+                          <td>Radio</td>
+                          <td>${singleData.others.Radio ? singleData.others.Radio: "Not Found"}</td>
+                        </tr>
+                        <tr>
+                          <td>WLAN</td>
+                          <td>${singleData.others.WLAN ? singleData.others.WLAN: "Not Found"}</td>
+                        </tr>
+                        <tr>
+                          <td>USB</td>
+                          <td>${singleData.others.USB ? singleData.others.USB: "Not Found"}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                            <th scope="col">Sensor Serial</th>
+                            <th scope="col-7">Sensor Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <th scope="row">Sensor One</th>
+                          <td>${singleData.mainFeatures.sensors[0] ? singleData.mainFeatures.sensors[0] : "Not Found"}</td>
+                      
+                        </tr>
+                        <tr>
+                          <td>Sensor Two</td>
+                          <td>${singleData.mainFeatures.sensors[1] ? singleData.mainFeatures.sensors[1] : "Not Found"}</td>
+                        </tr>
+                        <tr>
+                          <td>Sensor Three</td>
+                          <td>${singleData.mainFeatures.sensors[2] ? singleData.mainFeatures.sensors[2] : "Not Found"}</td>
+                        </tr>
+                        <tr>
+                          <td>Sensor Four</td>
+                          <td>${singleData.mainFeatures.sensors[3] ? singleData.mainFeatures.sensors[3] : "Not Found"}</td>
+                        </tr>
+                        <tr>
+                          <td>Sensor Five</td>
+                          <td>${singleData.mainFeatures.sensors[4] ? singleData.mainFeatures.sensors[4] : "Not Found"}</td>
+                        </tr>
+                        <tr>
+                          <td>Sensor six</td>
+                          <td>${singleData.mainFeatures.sensors[5] ? singleData.mainFeatures.sensors[5] : "Not Found"}</td>
+                        </tr>
+                        <tr>
+                          <td>Sensor Seven</td>
+                          <td>${singleData.mainFeatures.sensors[6] ? singleData.mainFeatures.sensors[6] : "Not Found"}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                
+        </div>
+    </div>
+    `;
+    variableDeclared('details-card').appendChild(div);
+}
+
 
 // see more Phone Function
 const seeMore = ()=>{
