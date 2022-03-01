@@ -108,7 +108,7 @@ const displayPhoneDetails = singleData => {
             <p><span>Phone brand :</span> ${singleData.brand} </p>
             <p><span>Release Date :</span> ${singleData.releaseDate ? singleData.releaseDate : 'Null' } </p>
                 <div class="SpecificationSection">
-                    <table class="table table-dark table-hover">
+                    <table class="table table-dark table-hover table-bordered">
                         <thead>
                             <tr>
                             <th scope="col">Main Feature Name</th>
@@ -131,7 +131,7 @@ const displayPhoneDetails = singleData => {
                         </tr>
                       </tbody>
                     </table>
-                    <table class="table table-dark table-hover">
+                    <table class="table table-dark table-hover table-bordered">
                         <thead>
                             <tr>
                             <th scope="col">Others Feature Name</th>
@@ -166,7 +166,7 @@ const displayPhoneDetails = singleData => {
                         </tr>
                       </tbody>
                     </table>
-                    <table class="table table-dark table-hover">
+                    <table class="table table-dark table-hover table-bordered">
                         <thead>
                             <tr>
                             <th scope="col">Sensor Serial</th>
