@@ -213,28 +213,3 @@ const displayPhoneDetails = singleData => {
     variableDeclared('details-card').appendChild(div);
 }
 
-
-// see more Phone Function
-const seeMore = ()=>{
-
-  const takeInput = variableDeclared('search_field').value
-      // clearing search result  before start search
-      variableDeclared('search_result_area').textContent = '';
-      variableDeclared('details-card').textContent = '';
-      variableDeclared('seeMore').style.display = 'none';
-      variableDeclared('spinner').style.display = 'block';
-
-  // Fetching phoneDataApi API 
-  const phoneDataApi = ` https://openapi.programming-hero.com/api/phones?search=${takeInput}`;
-
-  fetch(phoneDataApi)
-      .then(response => response.json())
-      .then(PhoneData => {
-          if (PhoneData.data != '') {
-              displayPhonedData(PhoneData.data)
-              
-          } else {
-              setTimeout(spinnerTimeoutMessage, 2000);
-          }
-      });
-}
