@@ -18,6 +18,9 @@ ul {
 a {
     text-decoration: none;
 }
+h5,p{
+    font-family: 'Roboto';
+}
 li {
     list-style: none;
 }
@@ -76,7 +79,7 @@ section.search_area {
     background-color: #cdcbcb49;
     color: #c4d114;
 }
-
+/* search area css  end*/
 /* card css */
 .card {
     background: #325a8bad;
