@@ -22,7 +22,7 @@ li {
     list-style: none;
 }
 body {
-    background-image: url('images/body.jpg');
+    background-image: url('../images/body.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -32,10 +32,23 @@ body {
 
 /* theme css */
 
+
+
+/* spinner css */
+#spinner {
+    display: none;
+}
+#error-message{
+    display: none;
+}
+#spinner-timeout-message{
+    display: none;
+}
+#seeMore{
+    display: none;
+}
+
 /* search area css */
-
-
-
 
 .logo span {
     color: #fff;
@@ -66,12 +79,14 @@ section.search_area {
 
 /* card css */
 .card {
-    margin: 30px 0;
-    padding: 16px 4px;
-} 
+    background: #325a8bad;
+    color: white;
+    border-radius: 20px;
+}
 
 img.card-img-top {
     width: 150px;
     margin: 0 auto;
+    border-radius: 15px;
 }
 /* card css ends*/
