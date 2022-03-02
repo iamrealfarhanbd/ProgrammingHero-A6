@@ -67,8 +67,8 @@ const displayPhonedData = (phoneInfos) => {
                   <div class="card gray" style="width: 18rem; ">
                         <img src="${phoneInfo.image}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">${phoneInfo.phone_name}</h5>
-                            <p class="card-text"><span class='brandName'>Brand :</>${phoneInfo.brand}</p>
+                            <h5 class="card-title">Name : ${phoneInfo.phone_name}</h5>
+                            <p class="card-text"><span class='brandName'>Brand : </>${phoneInfo.brand}</p>
                             <a href="#" class="btn btn-dark" onclick="loadPhoneDetails('${phoneInfo.slug}')">
                             Details
                             </a>
