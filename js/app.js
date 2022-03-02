@@ -30,14 +30,17 @@ const searchPhone = () => {
         variableDeclared('spinner').style.display = 'none';
     }else{
 
+
     // Fetching phoneDataApi API 
     const phoneDataApi = ` https://openapi.programming-hero.com/api/phones?search=${searchText}`;
-
+ 
     fetch(phoneDataApi)
         .then(response => response.json())
         .then(PhoneData => {
             if (PhoneData.data != '') {
                 displayPhonedData(PhoneData.data.slice(0, 20))
+                // see more data push to array
+                valueArray.push(searchText)
                 variableDeclared('seeMore').style.display = 'block'
     
             } else {
@@ -213,12 +216,16 @@ const displayPhoneDetails = singleData => {
     variableDeclared('details-card').appendChild(div);
 }
 
-
+// seee more data store 
+valueArray =[]
+console.log()
 // see more Phone Function
 const seeMore = ()=>{
-
-  const takeInput = variableDeclared('search_field').value
-      // clearing search result  before start search
+  // console.log(valueArray)
+  const takeInput = valueArray.slice(-1)
+  // console.log(takeInput)
+  // const takeInput = variableDeclared('search_field').value
+  // clearing search result  before start search
       variableDeclared('search_result_area').textContent = '';
       variableDeclared('details-card').textContent = '';
       variableDeclared('seeMore').style.display = 'none';
@@ -232,7 +239,7 @@ const seeMore = ()=>{
       .then(PhoneData => {
           if (PhoneData.data != '') {
               displayPhonedData(PhoneData.data)
-              
+          
           } else {
               setTimeout(spinnerTimeoutMessage, 2000);
           }
