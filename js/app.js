@@ -67,7 +67,7 @@ const displayPhonedData = (phoneInfos) => {
         const div = document.createElement('div');
         div.classList.add('p-2', 'bd-highlight','col-md-4');
         div.innerHTML = `
-                  <div class="card gray" style="width: 18rem; ">
+                  <div class="card" style="width: 18rem; ">
                         <img src="${phoneInfo.image}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Name : ${phoneInfo.phone_name}</h5>

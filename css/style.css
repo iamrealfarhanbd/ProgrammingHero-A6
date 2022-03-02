@@ -93,3 +93,11 @@ img.card-img-top {
     border-radius: 15px;
 }
 /* card css ends*/
+
+@media (min-width: 300px) and (max-width: 1024px) {
+  
+    .card{
+        width: 100% !important;
+    }
+    
+  }
