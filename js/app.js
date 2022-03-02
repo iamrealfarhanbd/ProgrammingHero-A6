@@ -106,7 +106,7 @@ const displayPhoneDetails = singleData => {
 
             <h2> Phone name : ${singleData.name} </h2>
             <p><span>Phone brand :</span> ${singleData.brand} </p>
-            <p><span>Release Date :</span> ${singleData.releaseDate ? singleData.releaseDate : 'Null' } </p>
+            <p><span>Release Date :</span> ${singleData.releaseDate ? singleData.releaseDate : 'not Found' } </p>
                 <div class="SpecificationSection">
                     <table class="table table-dark table-hover table-bordered">
                         <thead>
