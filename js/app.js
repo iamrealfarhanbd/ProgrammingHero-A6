@@ -2,7 +2,7 @@
 
 
 
-
+// get id Function
 const variableDeclared = (value) => {
   const elementID = document.getElementById(value);
   return elementID;
