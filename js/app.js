@@ -141,28 +141,28 @@ const displayPhoneDetails = singleData => {
                         <tbody>
                         <tr>
                           <th scope="row">Bluetooth</th>
-                          <td>${singleData.others.Bluetooth ? singleData.others.Bluetooth: "Not Found"}</td>
+                          <td>${singleData.others ? singleData.others.Bluetooth: "No Bluetooth Found"}</td>
                       
                         </tr>
                         <tr>
                           <td>GPS</td>
-                          <td>${singleData.others.GPS ? singleData.others.GPS: "Not Found"}</td>
+                          <td>${singleData.others ? singleData.others.GPS: "No GPS Found"}</td>
                         </tr>
                         <tr>
                           <td>NFC</td>
-                          <td>${singleData.others.NFC ? singleData.others.NFC: "Not Found"}</td>
+                          <td>${singleData.others ? singleData.others.NFC: "No NFC Found"}</td>
                         </tr>
                         <tr>
                           <td>Radio</td>
-                          <td>${singleData.others.Radio ? singleData.others.Radio: "Not Found"}</td>
+                          <td>${singleData.others ? singleData.others.Radio: "No Radio Found"}</td>
                         </tr>
                         <tr>
                           <td>WLAN</td>
-                          <td>${singleData.others.WLAN ? singleData.others.WLAN: "Not Found"}</td>
+                          <td>${singleData.others ? singleData.others.WLAN: "No WLAN Found"}</td>
                         </tr>
                         <tr>
                           <td>USB</td>
-                          <td>${singleData.others.USB ? singleData.others.USB: "Not Found"}</td>
+                          <td>${singleData.others ? singleData.others.USB: "No USB Found"}</td>
                         </tr>
                       </tbody>
                     </table>
